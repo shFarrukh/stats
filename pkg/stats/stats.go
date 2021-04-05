@@ -1,7 +1,7 @@
 package stats
 
 import (
-	"github.com/shFarrukh/bank/pkg/types"
+	"github.com/shFarrukh/bank/v2/pkg/types"
 )
 
 
@@ -9,9 +9,11 @@ func Avg(payments []types.Payment) types.Money{
 	s := 0
 	couter := 0
 	for _, i := range payments {
-
-		s+= int(i.Amount)
+		
+		if i.Status != types.StatusFail{
+			s+= int(i.Amount)
 		couter ++
+		}
 	}
 	return types.Money(s/couter)
 
@@ -20,7 +22,7 @@ func TotalInCategory (Payments []types.Payment, category types.Category) types.M
 	s:=0
 
 	for _, i := range Payments{
-		if i.Category == category{
+		if i.Category == category && i.Status != types.StatusFail{
 			s += int(i.Amount)
 			
 		}

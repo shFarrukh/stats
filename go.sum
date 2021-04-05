@@ -1,4 +1,2 @@
-github.com/shFarrukh/bank v0.0.0-20210405140053-bc556bfaf58b h1:pTq+YXYnap4BtlL0gHKGpgKR3HaXYqIs63n7MaoY0LE=
-github.com/shFarrukh/bank v0.0.0-20210405140053-bc556bfaf58b/go.mod h1:Or/z7638rZzyNurfUeMnlEtg6iOdxo5k3QM9lHw1p78=
-github.com/shFarrukh/bank v0.0.0-20210405141235-cb9d218fe537 h1:kgW3UTGHRgh+S2o82yEcd9Uilb2vu72Ww8aWUkiZ9os=
-github.com/shFarrukh/bank v0.0.0-20210405141235-cb9d218fe537/go.mod h1:syVe7/XRiYby2vWRo66kif/Fi3vdlBoxsQK8gyvnZig=
+github.com/shFarrukh/bank/v2 v2.0.0-20210405154009-32b5472c5e48 h1:SibCmwWjHW++4Kq5IeYicObGgYW/zo+f3tRJ6gLYv9s=
+github.com/shFarrukh/bank/v2 v2.0.0-20210405154009-32b5472c5e48/go.mod h1:u16812fbNZHLPxBvSix+fRaj5Db/gTMc+L26g5yFmAg=
