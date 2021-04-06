@@ -8,29 +8,25 @@ import (
 )
 
 func TestCategoriesAvg(t *testing.T) {
-	payments := []types.Payment{
-		{
-			Category: "food",
-			Amount:   1000,
-		},
-		{
-			Category: "food",
-			Amount:   1000,
-		},
-		{
-			Category: "auto",
-			Amount:   5000,
-		},
-		{
-			Category: "auto",
-			Amount:   5000,
-		},
+
+	first := map[types.Category]types.Money{
+		"food": 1000,
+		"auto": 5000,
+		"mobile" : 100,
+	}
+	second := map[types.Category]types.Money{
+		"food": 2000,
+		"auto": 4000,
+		"mobile" : 100,
+		"beauty" :100,
 	}
 	expected := map[types.Category]types.Money{
 		"food": 1000,
-		"auto": 5000,
+		"auto": -1000,
+		"mobile" : 0,
+		"beauty" :100,
 	}
-	result := CategoriesAvg(payments)
+	result := PeriodsDynamic(first, second)
 	if !reflect.DeepEqual(expected, result) {
 		t.Errorf("invalid result, expected: %v, actual: %v", expected, result)
 	}
