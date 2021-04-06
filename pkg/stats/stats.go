@@ -37,5 +37,22 @@ func TotalInCategory(Payments []types.Payment, category types.Category) types.Mo
 	}
 	return types.Money(s/c)
 }
+func PeriodsDynamic(
+	first map[types.Category]types.Money, 
+	second map[types.Category]types.Money,
+) map[types.Category]types.Money{
+	ans := map[types.Category]types.Money{}
+	max := map[types.Category]types.Money{}
+	if len(first)>len(second){
+		max = first
+	} else {
+		max = second
+	}
+
+	for key := range max {
+		ans[key] = second[key] - first[key]
+	}
+	return ans 
+}
 
 
