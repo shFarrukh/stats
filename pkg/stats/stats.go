@@ -17,18 +17,6 @@ func Avg(payments []types.Payment) types.Money {
 	return types.Money(s / couter)
 
 }
-func TotalInCategory(Payments []types.Payment, category types.Category) types.Money {
-	s := 0
-
-	for _, i := range Payments {
-		if i.Category == category && i.Status != types.StatusFail {
-			s += int(i.Amount)
-
-		}
-	}
-	return types.Money(s)
-}
-
 func CategoriesAvg(payments []types.Payment) map[types.Category]types.Money {
 	ans := map[types.Category]types.Money{}
 	for _, i := range payments {
@@ -36,3 +24,18 @@ func CategoriesAvg(payments []types.Payment) map[types.Category]types.Money {
 	}
 	return ans
 }
+
+func TotalInCategory(Payments []types.Payment, category types.Category) types.Money {
+	s := 0
+	c := 0
+
+	for _, i := range Payments {
+		if i.Category == category && i.Status != types.StatusFail {
+			s += int(i.Amount)
+			c++;
+		}
+	}
+	return types.Money(s/c)
+}
+
+
